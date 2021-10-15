@@ -34,7 +34,7 @@ class BoasVindas:
                          element_justification='c', finalize=True)
 
     def janela_repositorio_cybersecurity(self):
-        sg.theme('DarkBlue14')
+        sg.theme('DarkBlack')
         layout = [
             [sg.Text('Cybersecurity', font=('Times New Roman', 20))],
             [sg.Text('Este repositório tem como objetivo relacionar a ' +
@@ -48,7 +48,11 @@ class BoasVindas:
                          'Descriptografador de arquivos',
                          'Criptografador da Cifra de César',
                          'Descriptografador da Cifra de César'], size=(35, 1),
-                        font=('Times New Roman', 12))]
+                        font=('Times New Roman', 12))],
+            [sg.Button('', image_filename=r'icons\btn_icon_home.png',
+                       key='home'),
+             sg.Button('', image_filename=r'icons\btn_github.png', key='git'),
+             sg.Button('', image_filename='icons\clear.png', key='x')]
         ]
 
         return sg.Window('Repositórios', layout, element_justification='c',
