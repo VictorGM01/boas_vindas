@@ -21,11 +21,13 @@ class BoasVindas:
              sg.Checkbox('', default=False, key='linguagens')],
             [sg.Text('Assuntos', size=(25, 1)),
              sg.Checkbox('', default=False, key='assuntos')],
-            [sg.Button('IR', key='ok'),
-             sg.Button('Cancelar', key='x')]
+            [sg.Button('', image_filename=r'icons\btn_ok.png', key='ok'),
+             sg.Button('', image_filename='icons\clear.png', key='x'),
+             sg.Button('', image_filename='icons\icon_help.png', key='ajuda')]
         ]
 
-        return sg.Window('Boas vindas', layout, finalize=True)
+        return sg.Window('Home', layout,
+                         element_justification='c', finalize=True)
 
     def janela_repositorios(self):
         pass
