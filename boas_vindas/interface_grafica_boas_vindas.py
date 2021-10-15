@@ -5,13 +5,14 @@ import PySimpleGUI as sg
 class BoasVindas:
 
     def __init__(self):
-        self.janela_inicial()
+        self.janela_repositorio_cybersecurity()
         self.loop_entre_as_janelas()
 
-    def janela_inicial(self):
+    @staticmethod
+    def janela_inicial():
         sg.theme('DarkTeal9')
         layout = [
-            [sg.Text('Seja bem-vindx ao meu perfil',
+            [sg.Text('Seja bem-vindo ao meu perfil',
              font=('Times New Roman', 25), justification='c')],
             [sg.Text('Detalhar Repositórios', size=(25, 1),
                      font=('Times New Roman', 12)),
@@ -32,8 +33,26 @@ class BoasVindas:
         return sg.Window('Home', layout,
                          element_justification='c', finalize=True)
 
-    def janela_repositorios(self):
-        pass
+    def janela_repositorio_cybersecurity(self):
+        sg.theme('DarkBlue14')
+        layout = [
+            [sg.Text('Cybersecurity', font=('Times New Roman', 20))],
+            [sg.Text('Este repositório tem como objetivo relacionar a ' +
+                     'linguagem de programação Python com a ' +
+                     'Segurança Cibernética')],
+            [sg.Text('Contém scripts em Python que visam aplicar os conceitos'
+                     + ' de cibersegurança por meio da programação')],
+            [sg.Text('Conteúdo:')],
+            [sg.Listbox(['Gerador de senha', 'Gerador de Hash',
+                         'Comparador de Hashes', 'Criptografador de arquivos',
+                         'Descriptografador de arquivos',
+                         'Criptografador da Cifra de César',
+                         'Descriptografador da Cifra de César'], size=(35, 1),
+                        font=('Times New Roman', 12))]
+        ]
+
+        return sg.Window('Repositórios', layout, element_justification='c',
+                         finalize=True)
 
     def janela_perfil(self):
         pass
