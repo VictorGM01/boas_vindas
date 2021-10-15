@@ -10,7 +10,7 @@ class BoasVindas:
 
     @staticmethod
     def janela_inicial():
-        sg.theme('DarkTeal9')
+        sg.theme('DarkBlack')
         layout = [
             [sg.Text('Seja bem-vindo ao meu perfil',
              font=('Times New Roman', 25), justification='c')],
@@ -33,7 +33,8 @@ class BoasVindas:
         return sg.Window('Home', layout,
                          element_justification='c', finalize=True)
 
-    def janela_repositorio_cybersecurity(self):
+    @staticmethod
+    def janela_repositorio_cybersecurity():
         sg.theme('DarkBlack')
         layout = [
             [sg.Text('Cybersecurity', font=('Times New Roman', 20))],
