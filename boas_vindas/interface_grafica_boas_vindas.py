@@ -132,11 +132,13 @@ class BoasVindas:
     def janela_mais_repositorios():
         sg.theme('DarkBlack')
         layout = [
-            [sg.Text('Mais Repositórios', font=('Times New Roman', 20),
-                     justification='center')],
+            [sg.Text('Mais Repositórios', font=('Times New Roman', 20)),
+             sg.Image(filename='icons\icon_repo.png')],
             [sg.Text('Ainda há muitos outros repositórios no meu perfil!' +
-                     ' Todos baseados em Python, porém, abrangem ' +
-                     'assuntos distintos e muito interessantes')],
+                     ' Todos foram feitos em Python e abrangem ' +
+                     'assuntos distintos e muito interessantes',
+                     font=('Times New Roman', 13))],
+            [sg.Text('')],
             [sg.Text('Automated Testings', size=(32, 1)),
              sg.Button('', image_filename=r'icons\btn_ok.png',
                        key='auto_tests')],
@@ -154,7 +156,7 @@ class BoasVindas:
                        key='playlist')],
             [sg.Text('Análise Descritiva PNAD COVID-19', size=(32, 1)),
              sg.Button('', image_filename=r'icons\btn_ok.png',
-                       key='analise_pnad')]
+                       key='analise_pnad')],
             [sg.Text('')],
             [sg.Button('', image_filename=r'icons\btn_icon_home.png',
                        key='home'),
@@ -162,7 +164,8 @@ class BoasVindas:
              sg.Button('', image_filename='icons\clear.png', key='x')]
         ]
 
-        return sg.Window('Mais repositórios', layout, finalize=True)
+        return sg.Window('Mais repositórios', layout, finalize=True,
+                         element_justification='c')
 
     def janela_perfil(self):
         pass
