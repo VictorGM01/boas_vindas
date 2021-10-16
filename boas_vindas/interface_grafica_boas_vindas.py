@@ -70,7 +70,8 @@ class BoasVindas:
     def janela_repositorio_interfaces_graficas():
         sg.theme('DarkBlack')
         layout = [
-            [sg.Text('Interfaces Gráficas', font=('Times New Roman', 20))],
+            [sg.Text('Interfaces Gráficas', font=('Times New Roman', 20)),
+             sg.Image(filename='icons\icon_interface.png')],
             [sg.Text('Este repositório contém interfaces gráficas de ' +
                      'códigos de outros repositórios, tornado-os ' +
                      'em algo mais visual e intuitivo.')],
