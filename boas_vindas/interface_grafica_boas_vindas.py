@@ -5,7 +5,10 @@ import PySimpleGUI as sg
 class BoasVindas:
 
     def __init__(self):
-        self.janela_repositorio_cybersecurity()
+        janela1 = self.janela_inicial()
+        self.janela1 = janela1
+        janela2 = None
+        self.janela2 = janela2
         self.loop_entre_as_janelas()
 
     @staticmethod
@@ -46,7 +49,7 @@ class BoasVindas:
                      + ' de cibersegurança por meio da programação')],
             [sg.Text('Conteúdo:')],
             [sg.Image(filename='icons\icon_p_blue.png'),
-             sg.Listbox(['Keylogger', 'Gerador de senha','Gerador de Hash',
+             sg.Listbox(['Keylogger', 'Gerador de senha', 'Gerador de Hash',
                          'Comparador de Hashes', 'Criptografador de arquivos',
                          'Descriptografador de arquivos',
                          'Criptografador da Cifra de César',
@@ -79,6 +82,12 @@ class BoasVindas:
 
             if evento == sg.WINDOW_CLOSED or evento == 'x':
                 break
+
+            if janela == self.janela1 and evento == 'ok':
+                if valores['repositorios']:
+                    self.janela2 = self.janela_repositorio_cybersecurity()
+                    self.janela1.hide()
+
 
 
 teste = BoasVindas()
