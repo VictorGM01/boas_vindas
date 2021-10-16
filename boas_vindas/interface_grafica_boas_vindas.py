@@ -70,12 +70,12 @@ class BoasVindas:
     def janela_repositorio_interfaces_graficas():
         sg.theme('DarkBlack')
         layout = [
-            [sg.Text('Cybersecurity', font=('Times New Roman', 20))],
+            [sg.Text('Interfaces Gráficas', font=('Times New Roman', 20))],
             [sg.Text('Este repositório contém interfaces gráficas de ' +
                      'códigos de outros repositórios, tornado-os ' +
                      'em algo mais visual e intuitivo.')],
             [sg.Text('Para as interfaces foi utilizado a biblioteca' +
-                     ' PySimpleGUI')],
+                     ' PySimpleGUI, o que deixou-as muito bonitas')],
             [sg.Text('Conteúdo:')],
             [sg.Listbox(['Dicionário de tags do HTML',
                          'Gerador de senhas seguras'], size=(30, 1),
@@ -107,6 +107,10 @@ class BoasVindas:
                 if valores['repositorios']:
                     self.janela2 = self.janela_repositorio_cybersecurity()
                     self.janela1.hide()
+
+            if janela == self.janela2 and evento == 'next':
+                self.janela3 == self.janela_repositorio_interfaces_graficas()
+                self.janela2.hide()
 
 
 
