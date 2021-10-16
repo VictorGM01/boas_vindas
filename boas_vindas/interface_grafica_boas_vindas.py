@@ -139,12 +139,16 @@ class BoasVindas:
             if evento == sg.WINDOW_CLOSED or evento == 'x':
                 break
 
-            if janela == self.janela1 and evento == 'ok':
+            elif evento == 'home':
+                janela.hide()
+                self.janela1.un_hide()
+
+            elif janela == self.janela1 and evento == 'ok':
                 if valores['repositorios']:
                     self.janela2 = self.janela_repositorio_cybersecurity()
                     self.janela1.hide()
 
-            if janela == self.janela2:
+            elif janela == self.janela2:
                 if evento == 'next':
                     self.janela3 == self.janela_repositorio_interfaces_graficas()
                     self.janela2.hide()
@@ -152,11 +156,7 @@ class BoasVindas:
                 elif evento == 'git':
                     wb.open('https://github.com/VictorGM01/cybersecurity')
 
-                elif evento == 'home':
-                    janela.hide()
-                    self.janela1.un_hide()
-
-            if janela == self.janela3:
+            elif janela == self.janela3:
                 if evento == 'next':
                     self.janela4 = self.janela_repositorio_dicionario_html()
                     self.janela3.hide()
