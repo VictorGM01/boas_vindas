@@ -162,6 +162,9 @@ class BoasVindas:
                     self.janela4 = self.janela_repositorio_dicionario_html()
                     self.janela3.hide()
 
+                elif evento == 'git':
+                    wb.open('https://github.com/VictorGM01/interfaces_graficas')
+
 
 
 teste = BoasVindas()
