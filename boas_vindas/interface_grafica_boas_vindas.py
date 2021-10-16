@@ -213,6 +213,27 @@ class BoasVindas:
                 elif evento == 'git':
                     wb.open('https://github.com/VictorGM01/DicionarioHtml')
 
+            elif janela == self.janela5:
+                if evento == 'git':
+                    wb.open('https://github.com/VictorGM01?tab=repositories')
+
+                elif evento == 'auto_tests':
+                    wb.open('https://github.com/VictorGM01/automated_testings')
+
+                elif evento == 'validate':
+                    wb.open('https://github.com/VictorGM01/validate')
+
+                elif evento == 'automacao_tabela':
+                    wb.open('https://github.com/VictorGM01/automacao_tabela_excel')
+
+                elif evento == 'extrator':
+                    wb.open('https://github.com/VictorGM01/ExtratorUrl')
+
+                elif evento == 'playlist':
+                    wb.open('https://github.com/VictorGM01/Playlist')
+
+                elif evento == 'analise_pnad':
+                    wb.open('https://github.com/VictorGM01/Analise_descritiva_PNAD_Covid19')
 
 
 
