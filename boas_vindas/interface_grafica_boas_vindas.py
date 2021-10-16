@@ -124,6 +124,10 @@ class BoasVindas:
                 if evento == 'git':
                     wb.open('https://github.com/VictorGM01/cybersecurity')
 
+                if evento == 'home':
+                    janela.hide()
+                    self.janela1.un_hide()
+
 
 
 teste = BoasVindas()
