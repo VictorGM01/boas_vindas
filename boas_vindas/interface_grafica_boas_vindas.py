@@ -7,8 +7,8 @@ class BoasVindas:
     def __init__(self):
         janela1 = self.janela_inicial()
         self.janela1 = janela1
-        janela2, janela3 = None, None
-        self.janela2, self.janela3 = janela2, janela3
+        janela2, janela3, janela4 = None, None, None
+        self.janela2, self.janela3, self.janela4 = janela2, janela3, janela4
         self.loop_entre_as_janelas()
 
     @staticmethod
@@ -149,12 +149,17 @@ class BoasVindas:
                     self.janela3 == self.janela_repositorio_interfaces_graficas()
                     self.janela2.hide()
 
-                if evento == 'git':
+                elif evento == 'git':
                     wb.open('https://github.com/VictorGM01/cybersecurity')
 
-                if evento == 'home':
+                elif evento == 'home':
                     janela.hide()
                     self.janela1.un_hide()
+
+            if janela == self.janela3:
+                if evento == 'next':
+                    self.janela4 = self.janela_repositorio_dicionario_html()
+                    self.janela3.hide()
 
 
 
