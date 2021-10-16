@@ -7,8 +7,8 @@ class BoasVindas:
     def __init__(self):
         janela1 = self.janela_inicial()
         self.janela1 = janela1
-        janela2 = None
-        self.janela2 = janela2
+        janela2, janela3 = None, None
+        self.janela2, self.janela3 = janela2, janela3
         self.loop_entre_as_janelas()
 
     @staticmethod
@@ -68,7 +68,27 @@ class BoasVindas:
 
     @staticmethod
     def janela_repositorio_interfaces_graficas():
-        pass
+        sg.theme('DarkBlack')
+        layout = [
+            [sg.Text('Cybersecurity', font=('Times New Roman', 20))],
+            [sg.Text('Este repositório contém interfaces gráficas de ' +
+                     'códigos de outros repositórios, tornado-os ' +
+                     'em algo mais visual e intuitivo.')],
+            [sg.Text('Para as interfaces foi utilizado a biblioteca' +
+                     ' PySimpleGUI')],
+            [sg.Text('Conteúdo:')],
+            [sg.Listbox(['Dicionário de tags do HTML',
+                         'Gerador de senhas seguras'], size=(30, 1),
+                        font=('Times New Roman', 12))],
+            [sg.Button('', image_filename=r'icons\btn_icon_home.png',
+                       key='home'),
+             sg.Button('', image_filename=r'icons\btn_github.png', key='git'),
+             sg.Button('', image_filename='icons\clear.png', key='x'),
+             sg.Button('', image_filename=r'icons\btn_next.png', key='next')]
+        ]
+
+        return sg.Window('Interfaces Gráficas', layout,
+                         element_justification='c', finalize=True)
 
     def janela_perfil(self):
         pass
