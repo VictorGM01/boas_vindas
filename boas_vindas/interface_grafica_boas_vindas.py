@@ -116,9 +116,13 @@ class BoasVindas:
                     self.janela2 = self.janela_repositorio_cybersecurity()
                     self.janela1.hide()
 
-            if janela == self.janela2 and evento == 'next':
-                self.janela3 == self.janela_repositorio_interfaces_graficas()
-                self.janela2.hide()
+            if janela == self.janela2:
+                if evento == 'next':
+                    self.janela3 == self.janela_repositorio_interfaces_graficas()
+                    self.janela2.hide()
+
+                if evento == 'git':
+                    wb.open('https://github.com/VictorGM01/cybersecurity')
 
 
 
