@@ -102,13 +102,14 @@ class BoasVindas:
     def janela_repositorio_dicionario_html():
         sg.theme('DarkBlack')
         layout = [
-            [sg.Text('Interfaces Gráficas', font=('Times New Roman', 20)),
+            [sg.Text('Dicionário HTML', font=('Times New Roman', 20)),
              sg.Image(filename='icons\icon_html.png')],
             [sg.Text('Este repositório é dedicado à Raphaela Ferraz.' +
                      'Contém um script em Python que é capaz de adicionar e ' +
                      'buscar tags do HTML5.')],
             [sg.Text('Tem o intuito de facilitar a busca por tags específicas'
-                     + ', sendo alimentado conforme a Rapha aprende +')],
+                     + ', sendo alimentado conforme a Rapha vai'
+                     + ' aprendendo')],
             [sg.Text('')],
             [sg.Text('Conteúdo:')],
             [sg.Image(filename='icons\icon_tags.png'),
@@ -150,7 +151,7 @@ class BoasVindas:
 
             elif janela == self.janela2:
                 if evento == 'next':
-                    self.janela3 == self.janela_repositorio_interfaces_graficas()
+                    self.janela3 = self.janela_repositorio_interfaces_graficas()
                     self.janela2.hide()
 
                 elif evento == 'git':
