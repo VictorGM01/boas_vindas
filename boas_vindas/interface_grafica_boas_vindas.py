@@ -127,6 +127,42 @@ class BoasVindas:
         return sg.Window('Dicionário HTML', layout, element_justification='c',
                          finalize=True)
 
+    @staticmethod
+    def janela_mais_repositorios():
+        sg.theme('DarkBlack')
+        layout = [
+            [sg.Text('Mais Repositórios', font=('Times New Roman', 20),
+                     justification='center')],
+            [sg.Text('Ainda há muitos outros repositórios no meu perfil!' +
+                     ' Todos baseados em Python, porém, abrangem ' +
+                     'assuntos distintos e muito interessantes')],
+            [sg.Text('Automated Testings', size=(32, 1)),
+             sg.Button('', image_filename=r'icons\btn_ok.png',
+                       key='auto_tests')],
+            [sg.Text('Validate', size=(32, 1)),
+             sg.Button('', image_filename=r'icons\btn_ok.png',
+                       key='validate')],
+            [sg.Text('Automação Tabela Excel', size=(32, 1)),
+             sg.Button('', image_filename=r'icons\btn_ok.png',
+                       key='automacao_tabela')],
+            [sg.Text('Extrator URL', size=(32, 1)),
+             sg.Button('', image_filename=r'icons\btn_ok.png',
+                       key='extrator')],
+            [sg.Text('Playlist', size=(32, 1)),
+             sg.Button('', image_filename=r'icons\btn_ok.png',
+                       key='playlist')],
+            [sg.Text('Análise Descritiva PNAD COVID-19', size=(32, 1)),
+             sg.Button('', image_filename=r'icons\btn_ok.png',
+                       key='analise_pnad')]
+            [sg.Text('')],
+            [sg.Button('', image_filename=r'icons\btn_icon_home.png',
+                       key='home'),
+             sg.Button('', image_filename=r'icons\btn_github.png', key='git'),
+             sg.Button('', image_filename='icons\clear.png', key='x')]
+        ]
+
+        return sg.Window('Mais repositórios', layout, finalize=True)
+
     def janela_perfil(self):
         pass
 
