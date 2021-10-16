@@ -98,6 +98,31 @@ class BoasVindas:
         return sg.Window('Interfaces Gráficas', layout,
                          element_justification='c', finalize=True)
 
+    @staticmethod
+    def janela_repositorio_dicionario_html():
+        sg.theme('DarkBlack')
+        layout = [
+            [sg.Text('Interfaces Gráficas', font=('Times New Roman', 20))],
+            [sg.Text('Este repositório é dedicado à Raphaela Ferraz.' +
+                     'Contém um script em Python que é capaz de adicionar e ' +
+                     'buscar tags do HTML5.')],
+            [sg.Text('Tem o intuito de facilitar a busca por tags específicas'
+                     + ', sendo alimentado conforme a Rapha aprende +')],
+            [sg.Text('')],
+            [sg.Text('Conteúdo:')],
+            [sg.Listbox(['Dicionário de tags do HTML'], size=(27, 1),
+                        font=('Times New Roman', 12))],
+            [sg.Text('')],
+            [sg.Button('', image_filename=r'icons\btn_icon_home.png',
+                       key='home'),
+             sg.Button('', image_filename=r'icons\btn_github.png', key='git'),
+             sg.Button('', image_filename='icons\clear.png', key='x'),
+             sg.Button('', image_filename=r'icons\btn_next.png', key='next')]
+        ]
+
+        return sg.Window('Dicionário HTML', layout, element_justification='c',
+                         finalize=True)
+
     def janela_perfil(self):
         pass
 
