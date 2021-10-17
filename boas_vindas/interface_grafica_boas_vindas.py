@@ -49,6 +49,10 @@ class BoasVindas:
                     self.janela1.close()
                     return Repositorios()
 
+                elif valores['perfil']:
+                    self.janela1.close()
+                    return Perfil()
+
 
 # classe que contém as janelas referentes ao detalhamento dos repositórios
 class Repositorios:
