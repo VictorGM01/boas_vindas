@@ -342,12 +342,40 @@ class Perfil:
 class Linguagens:
 
     def __init__(self):
-        pass
+        janela_linguagens = self.janela_linguagens()
+        self.chama_janela()
 
-    def janela_linguagens(self):
-        pass
+    @staticmethod
+    def janela_linguagens():
+        layout = [
+            [sg.Text('Linguagem Utilizada nos Repositórios',
+                     font=('Times New Roman', 25)),
+             sg.Image(filename='icons\icon_python.png')],
+            [sg.Text('')],
+            [sg.Text('Até o momento, todos os repositórios são 100%' +
+                     ' baseados em Python')],
+            [sg.Text('Alguns são feitos utilizando o Jupyter Notebook, mas' +
+                     ' também são baseados em Python.')],
+            [sg.Image(key='gif')],
+            [sg.Button('', image_filename=r'icons\btn_icon_home.png',
+                       key='home'),
+             sg.Button('', image_filename=r'icons\btn_github.png', key='git'),
+             sg.Button('', image_filename='icons\clear.png', key='x')]
+        ]
+
+        return sg.Window('Linguagens Utlizadas', layout, finalize=True,
+                         element_justification='c')
 
     def chama_janela(self):
-        pass
+        while True:
+            janela, evento, valores = sg.read_all_windows()
+
+            if evento == sg.WINDOW_CLOSED or evento == 'x':
+                break
+
+            elif evento == 'home':
+                janela.hide()
+                BoasVindas()
+
 
 teste = BoasVindas()
