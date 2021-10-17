@@ -15,7 +15,7 @@ class BoasVindas:
     def chama_janela_inicial():
         sg.theme('DarkBlack')
         layout = [
-            [sg.Text('Seja bem-vindo ao meu perfil',
+            [sg.Text('Seja bem-vindo(a) ao meu perfil',
                      font=('Times New Roman', 25), justification='c')],
             [sg.Text('Detalhar Repositórios', size=(25, 1),
                      font=('Times New Roman', 12)),
