@@ -67,17 +67,11 @@ class Repositorios:
 
     def __init__(self):
         # chama janelas
-        janela_cybersecurity = self.janela_repositorio_cybersecurity()
-        self.janela_cybersecurity = janela_cybersecurity
+        self.janela_cybersecurity = self.janela_repositorio_cybersecurity()
         self.chama_janelas()
-        janela_interfaces_graficas = None
-        janela_dicionario_html = None
-        janela_mais_repositorios = None
-
-        # referencia janelas
-        self.janela_interfaces_graficas = janela_interfaces_graficas
-        self.janela_dicionario_html = janela_dicionario_html
-        self.janela_mais_repositorios = janela_mais_repositorios
+        self.janela_interfaces_graficas = None
+        self.janela_dicionario_html = None
+        self.janela_mais_repositorios = None
 
     @staticmethod
     def janela_repositorio_cybersecurity():
