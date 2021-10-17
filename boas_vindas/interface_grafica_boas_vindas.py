@@ -17,6 +17,7 @@ class BoasVindas:
         layout = [
             [sg.Text('Seja bem-vindo(a) ao meu perfil',
                      font=('Times New Roman', 25), justification='c')],
+            [sg.Text('')],
             [sg.Text('Detalhar Repositórios', size=(25, 1),
                      font=('Times New Roman', 12)),
              sg.Checkbox('', default=False, key='repositorios')],
