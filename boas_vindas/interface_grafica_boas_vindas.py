@@ -339,6 +339,15 @@ class Perfil:
                 wb.open('https://www.instagram.com/victor_gabriiielll/')
 
 
+class Linguagens:
 
+    def __init__(self):
+        pass
+
+    def janela_linguagens(self):
+        pass
+
+    def chama_janela(self):
+        pass
 
 teste = BoasVindas()
