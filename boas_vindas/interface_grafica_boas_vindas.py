@@ -1,5 +1,6 @@
 import webbrowser as wb
 import PySimpleGUI as sg
+from datetime import datetime
 
 
 # classe que chama as outras classes correspondentes (factory)
@@ -251,6 +252,56 @@ class Repositorios:
 
                 elif evento == 'analise_pnad':
                     wb.open('https://github.com/VictorGM01/Analise_descritiva_PNAD_Covid19')
+
+
+class Perfil:
+
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def janela_perfil():
+        sg.theme('DarkBlack')
+        nascimento = datetime(year=2004, month=2, day=23)
+        idade = datetime.today() - nascimento
+        idade = str(idade.days / 365)
+        idade = idade[0:2]
+        layout = [
+            [sg.Text('Sobre Mim - Perfil', font=('Times New Roman', 20),
+                     justification='c')],
+            [sg.Text('')],
+            [sg.Text('Nome', font=('Times New Roman', 13), size=(20, 1)),
+             sg.Text('Victor Gabriel Marques')],
+            [sg.Text('Idade', font=('Times New Roman', 13), size=(20, 1)),
+             sg.Text(idade)],
+            [sg.Text('Formação', font=('Times New Roman', 13), size=(20, 1)),
+             sg.Text('Médio-Técnico em Redes de Computadores (2° Ano)')],
+            [sg.Text('Skills', font=('Times New Roman', 13), size=(20, 1)),
+             sg.Text('Python, SQL, Jupyter Notebook, JavaScript,')],
+            [sg.Text('', font=('Times New Roman', 13), size=(20, 1)),
+             sg.Text('Colaboratoty, Linux...')],
+            [sg.Text('Sobre', font=('Times New Roman', 13), size=(20, 1)),
+             sg.Text('Futuro Técnico em Redes, desenvolvedor back-end,')],
+            [sg.Text('', font=('Times New Roman', 13), size=(20, 1)),
+             sg.Text('estagiário em desenvolvimento de serviços e tecnologias'
+                     )],
+            [sg.Text('Hobbies', font=('Times New Roman', 13), size=(20, 1)),
+             sg.Text('Ficar com quem ama, programar, ler, jogar futebol')],
+            [sg.Text('', font=('Times New Roman', 13), size=(20, 1)),
+             sg.Text('assistir séries, documentários e filmes'
+                     )],
+            [sg.Button('', image_filename=r'icons\btn_github.png', key='git'),
+             sg.Button('', image_filename=r'icons\btn_linkedin.png',
+                       key='linkedin'),
+             sg.Button('', image_filename=r'icons\btn_insta.png',
+                       key='instagram'),
+             sg.Button('', image_filename='icons\clear.png', key='x')]
+        ]
+
+        return sg.Window('Perfil', layout, finalize=True)
+
+    def chama_janela_perfil(self):
+        pass
 
 
 teste = BoasVindas()
