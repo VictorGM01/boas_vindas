@@ -383,5 +383,8 @@ class Linguagens:
                 self.janela_linguagens.hide()
                 BoasVindas()
 
+            elif evento == 'git':
+                wb.open('https://github.com/VictorGM01?tab=repositories&q=&type=&language=&sort=')
+
 
 teste = BoasVindas()
