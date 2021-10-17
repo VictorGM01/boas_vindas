@@ -35,8 +35,7 @@ class BoasVindas:
         return sg.Window('Home', layout,
                          element_justification='c', finalize=True)
 
-    @staticmethod
-    def chama_as_janelas_correspondentes():
+    def chama_as_janelas_correspondentes(self):
         while True:
             janela, evento, valores = sg.read_all_windows()
 
@@ -45,13 +44,14 @@ class BoasVindas:
 
             if evento == 'ok':
                 if valores['repositorios']:
+                    self.janela1.close()
                     return Repositorios()
-
 
 class Repositorios:
     def __init__(self):
         # chama janelas
         janela_cybersecurity = self.janela_repositorio_cybersecurity()
+        self.janela_cybersecurity = janela_cybersecurity
         self.chama_janelas()
         janela_interfaces_graficas = None
         janela_dicionario_html = None
@@ -61,7 +61,6 @@ class Repositorios:
         self.janela_interfaces_graficas = janela_interfaces_graficas
         self.janela_dicionario_html = janela_dicionario_html
         self.janela_mais_repositorios = janela_mais_repositorios
-        self.janela_cybersecurity = janela_cybersecurity
 
     @staticmethod
     def janela_repositorio_cybersecurity():
@@ -198,6 +197,56 @@ class Repositorios:
 
             if evento == sg.WINDOW_CLOSED or evento == 'x':
                 break
+
+            elif evento == 'home':
+                janela.hide()
+                BoasVindas()
+
+            elif janela == self.janela_cybersecurity:
+                if evento == 'next':
+                    self.janela_interfaces_graficas = self.janela_repositorio_interfaces_graficas()
+                    self.janela_cybersecurity.hide()
+
+                elif evento == 'git':
+                    wb.open('https://github.com/VictorGM01/cybersecurity')
+
+            elif janela == self.janela_interfaces_graficas:
+                if evento == 'next':
+                    self.janela_dicionario_html = self.janela_repositorio_dicionario_html()
+                    self.janela_interfaces_graficas.hide()
+
+                elif evento == 'git':
+                    wb.open('https://github.com/VictorGM01/interfaces_graficas')
+
+            elif janela == self.janela_dicionario_html:
+                if evento == 'next':
+                    self.janela_mais_repositorios = self.janela_mais_repositorios()
+                    self.janela_dicionario_html.hide()
+
+                elif evento == 'git':
+                    wb.open('https://github.com/VictorGM01/DicionarioHtml')
+
+            elif janela == self.janela_mais_repositorios:
+                if evento == 'git':
+                    wb.open('https://github.com/VictorGM01?tab=repositories')
+
+                elif evento == 'auto_tests':
+                    wb.open('https://github.com/VictorGM01/automated_testings')
+
+                elif evento == 'validate':
+                    wb.open('https://github.com/VictorGM01/validate')
+
+                elif evento == 'automacao_tabela':
+                    wb.open('https://github.com/VictorGM01/automacao_tabela_excel')
+
+                elif evento == 'extrator':
+                    wb.open('https://github.com/VictorGM01/ExtratorUrl')
+
+                elif evento == 'playlist':
+                    wb.open('https://github.com/VictorGM01/Playlist')
+
+                elif evento == 'analise_pnad':
+                    wb.open('https://github.com/VictorGM01/Analise_descritiva_PNAD_Covid19')
 
 
 teste = BoasVindas()
