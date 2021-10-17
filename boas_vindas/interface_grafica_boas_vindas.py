@@ -315,7 +315,8 @@ class Perfil:
 
         return sg.Window('Perfil', layout, finalize=True)
 
-    def chama_janela_perfil(self):
+    @staticmethod
+    def chama_janela_perfil():
         while True:
             janela, evento, valores = sg.read_all_windows()
 
