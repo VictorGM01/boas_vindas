@@ -391,7 +391,8 @@ class Linguagens:
 class Assuntos:
 
     def __init__(self):
-        pass
+        self.janela_assuntos = self.janela_assuntos()
+        self.chama_janela_assuntos()
 
     @staticmethod
     def janela_assuntos():
@@ -433,7 +434,18 @@ class Assuntos:
                          finalize=True)
 
     def chama_janela_assuntos(self):
-        pass
+        while True:
+            evento, valores = self.janela_assuntos.read()
+
+            if evento == sg.WINDOW_CLOSED or evento == 'x':
+                break
+
+            elif evento == 'home':
+                self.janela_assuntos.hide()
+                BoasVindas()
+
+            elif evento == 'git':
+                wb.open('https://github.com/VictorGM01?tab=repositories')
 
 
 teste = BoasVindas()
