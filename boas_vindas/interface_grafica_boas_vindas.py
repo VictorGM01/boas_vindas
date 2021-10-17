@@ -395,7 +395,42 @@ class Assuntos:
 
     @staticmethod
     def janela_assuntos():
-        pass
+        layout = [
+            [sg.Text('Assuntos/Conteúdos Dos Meus Códigos',
+                     font=('Times New Roman', 25))],
+            [sg.Text('')],
+            [sg.Text('Cibersegurança', font=('Times New Roman', 12),
+                     size=(25, 1))],
+            [sg.Text('Proteção de Dados', font=('Times New Roman', 12),
+                     size=(25, 1))],
+            [sg.Text('Criptografia', font=('Times New Roman', 12),
+                     size=(25, 1))],
+            [sg.Text('HTML', font=('Times New Roman', 12),
+                     size=(25, 1))],
+            [sg.Text('Validação de Dados/Docs', font=('Times New Roman', 12),
+                     size=(25, 1))],
+            [sg.Text('Orientação à Objetos', font=('Times New Roman', 12),
+                     size=(25, 1))],
+            [sg.Text('Testes Automatizados', font=('Times New Roman', 12),
+                     size=(25, 1))],
+            [sg.Text('Automação', font=('Times New Roman', 12),
+                     size=(25, 1))],
+            [sg.Text('REGEX', font=('Times New Roman', 12),
+                     size=(25, 1))],
+            [sg.Text('Interfaces Gráficas', font=('Times New Roman', 12),
+                     size=(25, 1))],
+            [sg.Text('Estatística', font=('Times New Roman', 12),
+                     size=(25, 1))],
+            [sg.Text('Python', font=('Times New Roman', 12),
+                     size=(25, 1))],
+            [sg.Button('', image_filename=r'icons\btn_icon_home.png',
+                       key='home'),
+             sg.Button('', image_filename=r'icons\btn_github.png', key='git'),
+             sg.Button('', image_filename='icons\clear.png', key='x')]
+        ]
+
+        return sg.Window('Assuntos', layout, element_justification='c',
+                         finalize=True)
 
     def chama_janela_assuntos(self):
         pass
