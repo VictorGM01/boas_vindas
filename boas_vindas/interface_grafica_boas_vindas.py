@@ -58,6 +58,10 @@ class BoasVindas:
                     self.janela1.close()
                     return Linguagens()
 
+                elif valores['assuntos']:
+                    self.janela1.close()
+                    return Assuntos()
+
 
 # classe que contém as janelas referentes ao detalhamento dos repositórios
 class Repositorios:
