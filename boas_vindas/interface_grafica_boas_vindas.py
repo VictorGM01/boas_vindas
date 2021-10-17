@@ -261,7 +261,9 @@ class Repositorios:
 class Perfil:
 
     def __init__(self):
-        pass
+        janela_perfil = self.janela_perfil()
+        self.janela_perfil = janela_perfil
+        self.chama_janela_perfil()
 
     @staticmethod
     def janela_perfil():
@@ -294,7 +296,9 @@ class Perfil:
             [sg.Text('', font=('Times New Roman', 13), size=(20, 1)),
              sg.Text('assistir séries, documentários e filmes'
                      )],
-            [sg.Button('', image_filename=r'icons\btn_github.png', key='git'),
+            [sg.Button('', image_filename=r'icons\btn_icon_home.png',
+                       key='home'),
+             sg.Button('', image_filename=r'icons\btn_github.png', key='git'),
              sg.Button('', image_filename=r'icons\btn_linkedin.png',
                        key='linkedin'),
              sg.Button('', image_filename=r'icons\btn_insta.png',
@@ -305,7 +309,17 @@ class Perfil:
         return sg.Window('Perfil', layout, finalize=True)
 
     def chama_janela_perfil(self):
-        pass
+        while True:
+            janela, evento, valores = sg.read_all_windows()
+
+            if evento == sg.WINDOW_CLOSED or evento == 'x':
+                break
+
+            elif evento == 'home':
+                janela.hide()
+                BoasVindas()
+
+
 
 
 teste = BoasVindas()
