@@ -53,6 +53,10 @@ class BoasVindas:
                     self.janela1.close()
                     return Perfil()
 
+                elif valores['linguagens']:
+                    self.janela1.close()
+                    return Linguagens()
+
 
 # classe que contém as janelas referentes ao detalhamento dos repositórios
 class Repositorios:
@@ -342,7 +346,7 @@ class Perfil:
 class Linguagens:
 
     def __init__(self):
-        janela_linguagens = self.janela_linguagens()
+        self.janela_linguagens = self.janela_linguagens()
         self.chama_janela()
 
     @staticmethod
