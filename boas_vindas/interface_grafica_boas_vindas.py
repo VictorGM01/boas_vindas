@@ -326,6 +326,17 @@ class Perfil:
                 janela.hide()
                 BoasVindas()
 
+            elif evento == 'git':
+                wb.open('https://github.com/VictorGM01')
+
+            elif evento == 'linkedin':
+                wb.open(
+                    'www.linkedin.com/in/victor-gabriel-marques-4a327a208'
+                    )
+
+            elif evento == 'instagram':
+                wb.open('https://www.instagram.com/victor_gabriiielll/')
+
 
 
 
