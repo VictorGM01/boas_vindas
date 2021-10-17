@@ -273,8 +273,10 @@ class Perfil:
         idade = str(idade.days / 365)
         idade = idade[0:2]
         layout = [
-            [sg.Text('Sobre Mim - Perfil', font=('Times New Roman', 20),
-                     justification='c')],
+            [sg.Text('', font=('Times New Roman', 20), size=(12, 1)),
+             sg.Text('Sobre Mim - Perfil', font=('Times New Roman', 20),
+                     justification='c'),
+             sg.Text('', font=('Times New Roman', 20), size=(12, 1))],
             [sg.Text('')],
             [sg.Text('Nome', font=('Times New Roman', 13), size=(20, 1)),
              sg.Text('Victor Gabriel Marques')],
@@ -296,14 +298,16 @@ class Perfil:
             [sg.Text('', font=('Times New Roman', 13), size=(20, 1)),
              sg.Text('assistir séries, documentários e filmes'
                      )],
-            [sg.Button('', image_filename=r'icons\btn_icon_home.png',
+            [sg.Text('', font=('Times New Roman', 20), size=(13, 1)),
+             sg.Button('', image_filename=r'icons\btn_icon_home.png',
                        key='home'),
              sg.Button('', image_filename=r'icons\btn_github.png', key='git'),
              sg.Button('', image_filename=r'icons\btn_linkedin.png',
                        key='linkedin'),
              sg.Button('', image_filename=r'icons\btn_insta.png',
                        key='instagram'),
-             sg.Button('', image_filename='icons\clear.png', key='x')]
+             sg.Button('', image_filename='icons\clear.png', key='x'),
+             sg.Text('', font=('Times New Roman', 20), size=(12, 1))]
         ]
 
         return sg.Window('Perfil', layout, finalize=True)
