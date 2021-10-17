@@ -31,8 +31,7 @@ class BoasVindas:
              sg.Checkbox('', default=False, key='assuntos')],
             [sg.Text('')],
             [sg.Button('', image_filename=r'icons\btn_ok.png', key='ok'),
-             sg.Button('', image_filename='icons\clear.png', key='x'),
-             sg.Button('', image_filename='icons\icon_help.png', key='ajuda')]
+             sg.Button('', image_filename='icons\clear.png', key='x')]
         ]
 
         return sg.Window('Home', layout,
