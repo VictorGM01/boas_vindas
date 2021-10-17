@@ -421,6 +421,7 @@ class Assuntos:
                      size=(25, 1))],
             [sg.Text('Validação de Dados/Docs', font=('Times New Roman', 12),
                      size=(25, 1))],
+            [sg.Text('')],
             [sg.Button('', image_filename=r'icons\btn_icon_home.png',
                        key='home'),
              sg.Button('', image_filename=r'icons\btn_github.png', key='git'),
