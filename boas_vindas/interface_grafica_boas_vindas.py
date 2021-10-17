@@ -359,8 +359,10 @@ class Linguagens:
             [sg.Text('Até o momento, todos os repositórios são 100%' +
                      ' baseados em Python')],
             [sg.Text('Alguns são feitos utilizando o Jupyter Notebook, mas' +
-                     ' também são baseados em Python.')],
-            [sg.Image(key='gif')],
+                     ' também foram escritos em Python.')],
+            [sg.Text('')],
+            [sg.Image(filename='icons\python (1).png')],
+            [sg.Text('')],
             [sg.Button('', image_filename=r'icons\btn_icon_home.png',
                        key='home'),
              sg.Button('', image_filename=r'icons\btn_github.png', key='git'),
