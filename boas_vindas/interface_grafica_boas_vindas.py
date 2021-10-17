@@ -388,4 +388,17 @@ class Linguagens:
                 wb.open('https://github.com/VictorGM01?tab=repositories&q=&type=&language=&sort=')
 
 
+class Assuntos:
+
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def janela_assuntos():
+        pass
+
+    def chama_janela_assuntos(self):
+        pass
+
+
 teste = BoasVindas()
