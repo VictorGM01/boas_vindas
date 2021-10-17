@@ -2,6 +2,7 @@ import webbrowser as wb
 import PySimpleGUI as sg
 
 
+# classe que chama as outras classes correspondentes (factory)
 class BoasVindas:
 
     def __init__(self):
@@ -47,7 +48,10 @@ class BoasVindas:
                     self.janela1.close()
                     return Repositorios()
 
+
+# classe que contém as janelas referentes ao detalhamento dos repositórios
 class Repositorios:
+
     def __init__(self):
         # chama janelas
         janela_cybersecurity = self.janela_repositorio_cybersecurity()
