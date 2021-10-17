@@ -372,13 +372,13 @@ class Linguagens:
 
     def chama_janela(self):
         while True:
-            janela, evento, valores = sg.read_all_windows()
+            evento, valores = self.janela_linguagens.read()
 
             if evento == sg.WINDOW_CLOSED or evento == 'x':
                 break
 
             elif evento == 'home':
-                janela.hide()
+                self.janela_linguagens.hide()
                 BoasVindas()
 
 
