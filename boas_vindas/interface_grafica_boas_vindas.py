@@ -71,6 +71,7 @@ class Repositorios:
         self.chama_janelas()
         self.janela_interfaces_graficas = None
         self.janela_dicionario_html = None
+        self.janela_automacao_apod = None
         self.janela_mais_repositorios = None
 
     @staticmethod
@@ -162,6 +163,38 @@ class Repositorios:
 
         return sg.Window('Dicionário HTML', layout, element_justification='c',
                          finalize=True)
+
+    @staticmethod
+    def janela_automacao_apod_nasa():
+        sg.theme('DarkBlack')
+        layout = [
+            [sg.Text('Automação APOD NASA', font=('Times New Roman', 20)),
+             sg.Image(filename=r'icons\robot.png')],
+            [sg.Text('Este repositório contém um código que ' +
+                     'automatiza o envio das imagens publicadas diariamente' +
+                     ' pela NASA, através do site APOD, aos e-mails definidos'
+                     )],
+            [sg.Text('Para a automação, a biblioteca Selenium foi a' +
+                     ' escolhida, apresentando uma perfomance muito boa.')],
+            [sg.Text('Para a comunicação com o servidor do gmail foi' +
+                     ' utilizada a biblioteca email, o que facilitou muito' +
+                     ' na estruturação do corpo e destinatários do e-mail.')],
+            [sg.Text('')],
+            [sg.Text('Conteúdo:')],
+            [sg.Image(filename='icons\icons_robot.png'),
+             sg.Listbox(['Automação do site APOD, da NASA'], size=(32, 1),
+                        font=('Times New Roman', 12)),
+             sg.Image(filename='icons_robot.png')],
+            [sg.Text('')],
+            [sg.Button('', image_filename=r'icons\btn_icon_home.png',
+                       key='home'),
+             sg.Button('', image_filename=r'icons\btn_github.png', key='git'),
+             sg.Button('', image_filename='icons\clear.png', key='x'),
+             sg.Button('', image_filename=r'icons\btn_next.png', key='next')]
+        ]
+
+        return sg.Window('Automação APOD - NASA', layout,
+                         element_justification='c', finalize=True)
 
     @staticmethod
     def janela_mais_repositorios():
