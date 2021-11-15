@@ -184,7 +184,7 @@ class Repositorios:
             [sg.Image(filename='icons\icons_robot.png'),
              sg.Listbox(['Automação do site APOD, da NASA'], size=(32, 1),
                         font=('Times New Roman', 12)),
-             sg.Image(filename='icons_robot.png')],
+             sg.Image(filename='icons\icons_robot.png')],
             [sg.Text('')],
             [sg.Button('', image_filename=r'icons\btn_icon_home.png',
                        key='home'),
@@ -264,11 +264,19 @@ class Repositorios:
 
             elif janela == self.janela_dicionario_html:
                 if evento == 'next':
-                    self.janela_mais_repositorios = self.janela_mais_repositorios()
+                    self.janela_automacao_apod = self.janela_automacao_apod_nasa()
                     self.janela_dicionario_html.hide()
 
                 elif evento == 'git':
                     wb.open('https://github.com/VictorGM01/DicionarioHtml')
+
+            elif janela == self.janela_automacao_apod:
+                if evento == 'next':
+                    self.janela_mais_repositorios = self.janela_mais_repositorios()
+                    self.janela_automacao_apod.hide()
+
+                elif evento == 'git':
+                    wb.open('https://github.com/VictorGM01/automacao_apod_nasa')
 
             elif janela == self.janela_mais_repositorios:
                 if evento == 'git':
